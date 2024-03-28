@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
 project(pathfinding CXX)
 
-find_package(nlohmann_json)
-find_package(spdlog)
+find_package(nlohmann_json REQUIRED)
+find_package(spdlog REQUIRED)
 find_package(GTest)
 find_package(fmt)
 

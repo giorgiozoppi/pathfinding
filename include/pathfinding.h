@@ -10,6 +10,7 @@ class Graph {
  public:
   struct Node {
     std::string label;
+    int weight;
     bool visited{false};
   };
   using NodeIndexName = std::map<std::string, int>;
@@ -24,15 +25,19 @@ class Graph {
   void loadGraph(const std::string &filename);
   // Get adjacency list
   const AdjacencyList &getAdjacencyList() const;
+
  private:
-  AdjacencyList adj;
-  std::string graph_id;
+  AdjacencyList adj_;
+  std::string graphId_;
+  NodeIndexName nodeIndex_;
 };
 
 std::vector<std::unique_ptr<Graph::Node>> shortestPathDijkstra(
-    const Graph &graph, const Graph::NodeLabel &start, const Graph::NodeLabel &end);
+    const Graph &graph, const Graph::NodeLabel &start,
+    const Graph::NodeLabel &end);
 std::vector<std::unique_ptr<Graph::Node>> dfsPathSearch(
-    const Graph &graph, const Graph::NodeLabel &start, const Graph::NodeLabel &end);
+    const Graph &graph, const Graph::NodeLabel &start,
+    const Graph::NodeLabel &end);
 std::vector<std::unique_ptr<Graph::Node>> bfsPathSearch(
     const Graph &graph, const Graph::NodeLabel &start, const std::string &end);
 std::vector<std::unique_ptr<Graph::Node>> aStarSearch(

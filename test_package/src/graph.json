@@ -1,0 +1,26 @@
+{
+    "graph": {
+      "id": "IrelandMap",
+      "edgedefault": "undirected",
+      "nodes": [
+        { "id": "Athlone" },
+        { "id": "Dublino" },
+        { "id": "Galway" },
+        { "id": "Limerick" },
+        { "id": "Killarney" },
+        { "id": "Wexford" },
+        { "id": "Waterford" },
+        { "id": "Sligo" },
+        { "id": "Belfast"},
+        { "id": "Dundalk"},
+        { "id": "Carlow"},
+        { "id": "Tipperary"},
+        { "id": "Cork"},
+        { "id": "Castelbar"},
+        { "id": "Letterkenny"}    
+      ],
+      "edges": [
+        { "id": "e0", "source": "n0", "target": "n1", "weight": 1 }
+      ]
+    }
+  }
