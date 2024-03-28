@@ -10,29 +10,32 @@ class Graph {
  public:
   struct Node {
     std::string label;
+    bool visited{false};
   };
   using NodeIndexName = std::map<std::string, int>;
   using AdjacencyList = std::vector<std::vector<std::shared_ptr<Node>>>;
   using Path = std::vector<std::unique_ptr<Node>>;
   using NodeLabel = std::string;
-
+  // Constructor
   Graph(const std::string &id);
-  void addEdge(const std::string &from, const std::string &to, int weight);
+  // Add edge to graph
+  void addEdge(const NodeLabel &from, const NodeLabel &to, int weight);
+  // Load graph from a json file
   void loadGraph(const std::string &filename);
+  // Get adjacency list
   const AdjacencyList &getAdjacencyList() const;
-
  private:
   AdjacencyList adj;
   std::string graph_id;
 };
 
-std::vector<std::unique_ptr<Graph::Node>> shorted_path_dijkstra(
-    const Graph &graph, const std::string &start, const std::string &end);
-std::vector<std::unique_ptr<Graph::Node>> dfs_path_search(
-    const Graph &graph, const std::string &start, const std::string &end);
-std::vector<std::unique_ptr<Graph::Node>> bfs_path_search(
-    const Graph &graph, const std::string &start, const std::string &end);
-std::vector<std::unique_ptr<Graph::Node>> a_start_search(
-    const Graph &graph, const std::string &start, const std::string &end);
+std::vector<std::unique_ptr<Graph::Node>> shortestPathDijkstra(
+    const Graph &graph, const Graph::NodeLabel &start, const Graph::NodeLabel &end);
+std::vector<std::unique_ptr<Graph::Node>> dfsPathSearch(
+    const Graph &graph, const Graph::NodeLabel &start, const Graph::NodeLabel &end);
+std::vector<std::unique_ptr<Graph::Node>> bfsPathSearch(
+    const Graph &graph, const Graph::NodeLabel &start, const std::string &end);
+std::vector<std::unique_ptr<Graph::Node>> aStarSearch(
+    const Graph &graph, const Graph::NodeLabel &start, const std::string &end);
 }  // namespace pathfinding
 #endif

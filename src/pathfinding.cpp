@@ -12,17 +12,17 @@ void pathfinding::Graph::loadGraph(const std::string &filename) {
   // Load graph from file
 }
 
-std::vector<std::unique_ptr<Graph::Node>> shorted_path_dijkstra(
+std::vector<std::unique_ptr<Graph::Node>> shortestPathDijkstra(
     const Graph &graph, const std::string &start, const std::string &end) {
   std::vector<std::unique_ptr<Graph::Node>> path;
   return path;
 }
-std::vector<std::unique_ptr<Graph::Node>> dfs_path_search(
+std::vector<std::unique_ptr<Graph::Node>> dfsPathSearch(
     const Graph &graph, const std::string &start, const std::string &end) {
   std::vector<std::unique_ptr<Graph::Node>> path;
   return path;
 }
-std::vector<std::unique_ptr<Graph::Node>> bfs_path_search(
+std::vector<std::unique_ptr<Graph::Node>> bfsPathSearch(
     const Graph &graph, const std::string &start, const std::string &end) {
   std::vector<std::unique_ptr<Graph::Node>> path;
   return path;
