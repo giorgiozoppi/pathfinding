@@ -1,2 +1,2 @@
-# pathfinding
-Collection of Pathfinding Algorithms and visualization.
+# Path finding
+Collection of Pathfinding Algorithms and Visualization.
